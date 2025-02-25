@@ -16,7 +16,11 @@ void main() {
     expect(calculator.add('5'), 5);
   });
 
-  test('Multi numbers returns their sum', () {
+  test('Multi numbers', () {
     expect(calculator.add('1,2'), 3);
+  });
+
+  test('New line between number support', () {
+    expect(calculator.add('1\n2,3'), 6);
   });
 }
