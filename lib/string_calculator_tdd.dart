@@ -10,8 +10,17 @@ class StringCalculatorTDD {
     }
     var numArray = numbers.split(RegExp(r'[,\n]'));
     int sum = 0;
+    final negativeNumbers = StringBuffer();
     for (var num in numArray) {
-      sum += int.parse(num);
+      int numInt = int.parse(num);
+      if (numInt < 0) {
+        negativeNumbers.write('$num, ');
+      }
+      sum += numInt;
+    }
+    if (negativeNumbers.isNotEmpty) {
+      throw ArgumentError(
+          'negatives numbers not allowed ${negativeNumbers.toString().trim()}');
     }
     return sum;
   }

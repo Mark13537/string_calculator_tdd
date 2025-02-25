@@ -29,4 +29,8 @@ void main() {
     expect(calculator.add('''//?\n1,1
   1?1'''), 4);
   });
+
+  test('Negative numbers throw exception', () {
+    expect(() => calculator.add('1,-2,3'), throwsA(isA<ArgumentError>()));
+  });
 }
