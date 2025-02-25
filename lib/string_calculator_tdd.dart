@@ -1,5 +1,8 @@
 class StringCalculatorTDD {
+  int _calledCount = 0;
+
   int add(String numbers) {
+    _calledCount++;
     if (numbers.isEmpty) {
       return 0;
     }
@@ -23,5 +26,9 @@ class StringCalculatorTDD {
           'negatives numbers not allowed ${negativeNumbers.toString().trim()}');
     }
     return sum;
+  }
+
+  int getCalledCount() {
+    return _calledCount;
   }
 }
