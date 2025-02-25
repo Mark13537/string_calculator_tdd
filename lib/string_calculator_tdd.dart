@@ -3,6 +3,11 @@ class StringCalculatorTDD {
     if (numbers.isEmpty) {
       return 0;
     }
-    return int.parse(numbers);
+    var numArray = numbers.split(',');
+    int sum = 0;
+    for (var num in numArray) {
+      sum += int.parse(num);
+    }
+    return sum;
   }
 }

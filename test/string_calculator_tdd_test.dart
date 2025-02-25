@@ -15,4 +15,8 @@ void main() {
   test('Single int parsing', () {
     expect(calculator.add('5'), 5);
   });
+
+  test('Multi numbers returns their sum', () {
+    expect(calculator.add('1,2'), 3);
+  });
 }
