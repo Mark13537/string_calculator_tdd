@@ -1,3 +1,8 @@
-int calculate() {
-  return 6 * 7;
+class StringCalculatorTDD {
+  int add(String numbers) {
+    if (numbers.isEmpty) {
+      return 0;
+    }
+    return int.parse(numbers);
+  }
 }

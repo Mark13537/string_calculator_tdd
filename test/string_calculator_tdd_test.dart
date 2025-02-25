@@ -1,8 +1,18 @@
-import 'package:string_calculator_tdd/string_calculator_tdd.dart';
 import 'package:test/test.dart';
+import 'package:string_calculator_tdd/string_calculator_tdd.dart';
 
 void main() {
-  test('calculate', () {
-    expect(calculate(), 42);
+  late final StringCalculatorTDD calculator;
+
+  setUpAll(() {
+    calculator = StringCalculatorTDD();
+  });
+
+  test('Empty string returns 0', () {
+    expect(calculator.add(''), 0);
+  });
+
+  test('Single int parsing', () {
+    expect(calculator.add('5'), 5);
   });
 }
