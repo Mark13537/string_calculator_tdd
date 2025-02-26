@@ -33,11 +33,21 @@ class StringCalculatorTDD {
   }
 
   String customDelimiter(String numbers) {
-    if (numbers.startsWith('//')) {
-      // extract dilimiter and replace it with ","
-      final delimiter = numbers.substring(2, numbers.indexOf('\n'));
+    var delimiter = ",";
+    if (numbers.startsWith('//[')) {
+      // extract dilimiter with brackets and replace it with ","
+      var delimiterStart = numbers.indexOf('[');
+      var delimiterEnd = numbers.indexOf(']');
+      delimiter = numbers.substring(delimiterStart + 1, delimiterEnd);
       numbers = numbers.substring(numbers.indexOf('\n') + 1);
       numbers = numbers.replaceAll(delimiter, ',');
+    } else {
+      if (numbers.startsWith('//')) {
+        // extract dilimiter and replace it with ","
+        delimiter = numbers.substring(2, numbers.indexOf('\n'));
+        numbers = numbers.substring(numbers.indexOf('\n') + 1);
+        numbers = numbers.replaceAll(delimiter, ',');
+      }
     }
     return numbers;
   }

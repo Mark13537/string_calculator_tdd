@@ -50,5 +50,9 @@ void main() {
     test('Ignore numbers larger than 1000', () {
       expect(calculator.add('2,1001'), 2);
     });
+
+    test('Any length delimiters', () {
+      expect(calculator.add('//[***]\n1***2***3'), 6);
+    });
   });
 }
