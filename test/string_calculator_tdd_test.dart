@@ -46,5 +46,9 @@ void main() {
       calc.add('3');
       expect(calc.getCalledCount(), 2);
     });
+
+    test('Ignore numbers larger than 1000', () {
+      expect(calculator.add('2,1001'), 2);
+    });
   });
 }

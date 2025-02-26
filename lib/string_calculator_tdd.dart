@@ -25,7 +25,9 @@ class StringCalculatorTDD {
       if (numInt < 0) {
         negativeNumbers.write('$num, ');
       }
-      sum += numInt;
+      if (numInt <= 1000) {
+        sum += numInt;
+      }
     }
     return sum;
   }
